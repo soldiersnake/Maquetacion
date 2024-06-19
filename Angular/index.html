@@ -5,7 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maquetacion para Master en Framworks Javascript</title>
     <!-- HOJA DE ESTILOS -->
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <script type="text/javascript">
+        window.addEventListener("load", (e) => {
+            let template = document.getElementById("article-template");
+            
+            let articles = document.getElementById('articles'); 
+            for(i = 1 ; i <= 5 ; i++){
+                let clonado = template.cloneNode(true);
+                clonado.removeAttribute("id")
+                let h2 = clonado.getElementsByTagName('h2')[0];
+                h2.innerHTML = h2.textContent + ' ' + i;
+                articles.appendChild(clonado);
+            }
+        });
+    </script>
 
 </head>
 <body>
@@ -13,9 +28,9 @@
         <div class="center">
             <!-- LOGO -->
                 <div id="logo">
-                    <img src="/assets/images/Logo-Marian.png" class="app-logo" alt="Logo">
+                    <img src="./assets/images/Logo-Marian.png" class="app-logo" alt="Logo">
                     <span id="brand">
-                        <strong>Master</strong>ReactJS
+                        <strong>Master</strong>Angular
                     </span>
                 </div>
             <!-- MENU -->
@@ -44,27 +59,31 @@
         </div>
     </header>
 
+    <div id="slider" class="slider-big">
+        <h1>Bienvenido al Master en frameworks para Javascript</h1>
+        <a href="#" class="btn-white">Ir al blog</a>
+    </div>
+
     <div class="center">
         <section id="content">
+            <h2 class="subheader">Ultimos articulos</h2>
             
-                <article class="article-item article-detail">
+            <!-- LISTADO ARTICULOS -->
+            <div id="articles">
+                <article class="article-item" id="article-template">
                     <div class="imagen-wrap">
                         <img src="https://t4.ftcdn.net/jpg/07/06/72/43/360_F_706724331_mXKLYjQ48TnJjR3d5H5DON2Llrfy7PHX.webp" alt="Paisaje">
                     </div>
-                    <h1 class="subheader">Articulo de prueba</h1>
-                    
+
+                        <h2>Articulo de prueba</h2>
                         <span class="date">
                             Hace 5 min
                         </span>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolores iusto ullam temporibus rem accusamus, numquam praesentium cumque culpa veniam excepturi unde quibusdam consectetur explicabo enim tempora repellat quidem impedit?
-                        </p>
-                        <p>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium recusandae, illo numquam sequi pariatur nihil nisi nobis voluptas sit est? Voluptatibus error nesciunt nam cum ea, quod ratione maiores sint.
-                        </p>
+                        <a href="#">Leer mas</a>
                         <div class="clearfix"></div>
                 </article>
-
+            </div>
+            <!-- SE AÑADEN ARTICULOS via JS -->
         </section>
 
         <aside id="sidebar">
