@@ -13,8 +13,8 @@ body{
     height: 120px;
     width: 100%;
     background-color: white;
-    border-top: 3px solid #61dafb;
     border-bottom: 1px solid #26111146;
+    border-top: 3px solid #09a330;
 }
 
 .center{
@@ -39,15 +39,21 @@ body{
     float: left;
     height: 60px;
     margin-top: -4%;
-    animation: girar infinite 30s linear;
+    animation: latir infinite 5s linear;
 }
 
-@keyframes girar{
-    from{
-        transform: rotate(0deg);
+@keyframes latir{
+    0%{
+        transform: scale(1, 1);
     }
-    to{
-        transform: rotate(360deg);
+    50%{
+        transform: scale(1.1, 1.1);
+    }
+    55%{
+        transform: scale(0.9, 0.9);
+    }
+    100%{
+        transform: scale(1, 1);
     }
 }
 
@@ -84,7 +90,7 @@ body{
 }
 
 #menu a:hover{
-    color: #61dafb;
+    color: #f13e3e;
 }
 
 #slider{
@@ -95,15 +101,14 @@ body{
     text-shadow: 0px 0px 5px #444;
     
     /* DEGRADADO con https://www.cssmatic.com/gradient-generator#' */
-    background: rgba(73,155,234,1);
-    background: -moz-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(73,155,234,1)), color-stop(100%, rgba(32,124,229,1)));
-    background: -webkit-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
-    background: -o-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
-    background: -ms-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
-    background: linear-gradient(to right, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5', GradientType=1 );
-}
+    background: rgba(106,194,81,1);
+    background: -moz-linear-gradient(left, rgba(106,194,81,1) 0%, rgba(7,141,41,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(106,194,81,1)), color-stop(100%, rgba(7,141,41,1)));
+    background: -webkit-linear-gradient(left, rgba(106,194,81,1) 0%, rgba(7,141,41,1) 100%);
+    background: -o-linear-gradient(left, rgba(106,194,81,1) 0%, rgba(7,141,41,1) 100%);
+    background: -ms-linear-gradient(left, rgba(106,194,81,1) 0%, rgba(7,141,41,1) 100%);
+    background: linear-gradient(to right, rgba(106,194,81,1) 0%, rgba(7,141,41,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6ac251', endColorstr='#078d29', GradientType=1 );}
 
 #slider h1{
     margin-top: 0.2px;
@@ -329,10 +334,16 @@ textarea{
     }
 }
 
-@media(max-width:797px){
+/* @media(max-width:920px){
+    #logo{
+        width: 300px;
+    }
+} */
+
+@media(max-width:920px){
     #logo{
         float: none;
-        width: 340px;
+        width: 300px;
         margin: 0 auto;
         margin-top: 20px;
     }
